@@ -71,7 +71,7 @@ Download from transfer.sh/<ID>. Scriptname <save-path> <ID> <file-name> :
 EOF
 }
 
-is_flag()
+flag_check()
 {
  # Check if $1 is a flag; e.g. "-b"
  [[ "$1" =~ -.* ]] && return 0 || return 1
@@ -94,7 +94,7 @@ while getopts "vhd" opt; do
    # a1,a2,a3 aren't flags. e.g.
    #   ./getopts-multiple.sh -a 1 2 -b
    # should error, and not set a3 to be -b.
-   if [ $((OPTIND+2)) -gt $# ] || is_flag "$savePath" || is_flag "$remoteID" || is_flag "$remoteFileName"
+   if [ $((OPTIND+2)) -gt $# ] || flag_check "$savePath" || flag_check "$remoteID" || flag_check "$remoteFileName"
    then
     echo "-d requires 3 arguments!"
    exit
