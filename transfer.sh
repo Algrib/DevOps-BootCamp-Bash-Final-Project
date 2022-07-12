@@ -1,6 +1,6 @@
 #!/bin/bash
 
-currentVersion="0.0.1"
+currentVersion="1.23.0"
 
 httpSingleUpload()
 {
