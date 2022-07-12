@@ -71,7 +71,8 @@ Download from transfer.sh/<ID>. Scriptname <save-path> <ID> <file-name> :
 EOF
 }
 
-is_flag() {
+is_flag()
+{
  # Check if $1 is a flag; e.g. "-b"
  [[ "$1" =~ -.* ]] && return 0 || return 1
 }
