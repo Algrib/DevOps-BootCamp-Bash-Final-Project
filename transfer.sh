@@ -86,9 +86,9 @@ while getopts "vhd" opt; do
    # $OPTIND has the index of the _next_ parameter; so "\${$((OPTIND))}"
    # will give us, e.g., ${2}. Use eval to get the value in ${2}.
    # The {} are needed in general for the possible case of multiple digits.
-   eval "savePath=\${$((OPTIND))}"
-   eval "remoteID=\${$((OPTIND+1))}"
-   eval "remoteFileName=\${$((OPTIND+2))}"
+   savePath="$((OPTIND))"
+   remoteID="$((OPTIND+1))"
+   remoteFileName="$((OPTIND+2))"
    # Note: We need to check that we're still in bounds, and that
    # a1,a2,a3 aren't flags. e.g.
    #   ./getopts-multiple.sh -a 1 2 -b
